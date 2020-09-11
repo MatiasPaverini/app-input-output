@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  countryUrl: "https://api.mocki.io/v1/570c5e5c"
+  userUrl: "https://api.mocki.io/v1/570c5e5c"
 };
 
 /*

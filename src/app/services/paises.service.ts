@@ -7,7 +7,7 @@ import { environment } from "../../environments/environment";
 })
 export class PaisesService {
 
-  private url = environment.countryUrl;
+  private url = environment.userUrl;
   public user;
 
   constructor(private http: HttpClient) { }
