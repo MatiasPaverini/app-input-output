@@ -4,16 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponentComponent } from "./components/login-component/login-component.component";
 import { LandingComponent } from "./components/landing/landing.component";
 import { ErrorComponent } from "./components/error/error.component";
+import { ControlEntidadComponent } from './components/control-entidad/control-entidad.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'bienvenido',
     pathMatch: 'full'
   },
   {
-    path: 'bienvenida',
+    path: 'bienvenido',
     component: LandingComponent
+  },{
+    path: 'paises/listado',
+    component: ControlEntidadComponent
   },
   {
     path: 'login',
@@ -23,6 +27,7 @@ const routes: Routes = [
     path: '**',
     component: ErrorComponent
   }
+  
 ];
 
 @NgModule({

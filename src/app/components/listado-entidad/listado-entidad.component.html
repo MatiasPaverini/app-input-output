@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table class="table table-striped" class="mat-elevation-z8" style="width: 100%; padding: 10px">
+        <thead>
+            <tr>
+                <th style="text-align: left;">Nombre</th>
+                <th style="text-align: left;">Apellido</th>
+                <th style="text-align: left;">Sexo</th>
+                <th style="text-align: left;">Fecha de Nacimiento</th>
+                <th style="text-align: left;">Email</th>
+                <th style="text-align: left;">Foto de Perfil</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userArray">
+                <td style="width: 30%;">{{user.Nombre}}</td>
+                <td style="width: 30%;">{{user.Apellido}}</td>
+                <td style="width: 30%;">{{user.Sexo}}</td>
+                <td style="width: 30%;">{{user.FechaNac}}</td>
+                <td style="width: 30%;">{{user.email}}</td>
+                <td style="width: 30%;">
+                    <img [src]="user.FotoPerfil" alt="" style="width: 50px; height: 50px;" srcset="">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
