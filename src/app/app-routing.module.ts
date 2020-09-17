@@ -24,6 +24,10 @@ const routes: Routes = [
     component: LoginComponentComponent
   },
   {
+    path: 'IO',
+    component: ControlEntidadComponent
+  },
+  {
     path: '**',
     component: ErrorComponent
   }

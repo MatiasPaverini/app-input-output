@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { PaisesService } from "../../services/paises.service";
 import { User } from "../../classes/user";
 
 
@@ -11,20 +10,22 @@ import { User } from "../../classes/user";
 })
 export class ListadoEntidadComponent implements OnInit {
 
-  userArray: User[];
-  //user: User;
+  @Input() userArray: User[] = [];
+  @Output() selectedUser: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private service: PaisesService) { }
+  displayColumns: string[] = ['id', 'email']
+
+  dataSource = this.userArray;
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.service.getCountry().subscribe((user: any) => {
-      console.log(user);
-      console.log("En observable");
-      this.userArray = user;
-    }, error => {
-      console.log("Error");
-    });
-    console.log("Salimos del observable");
+    
+  }
+
+  public show(user: User) {
+    console.log(user)
+    this.selectedUser.emit(user);
   }
 
 }

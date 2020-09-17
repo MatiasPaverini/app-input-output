@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-
+import { User } from "../../classes/user";
+import { PaisesService } from "../../services/paises.service";
 
 @Component({
   selector: 'app-control-entidad',
@@ -8,21 +9,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./control-entidad.component.css']
 })
 export class ControlEntidadComponent implements OnInit {
-
-  @Input() userArray = [];
-
-  displayColumns: string[] = ['id', 'email']
-
-  dataSource = this.userArray;
-
-  constructor() { }
+  userArray: User[];
+  user:User;
+  constructor(private service: PaisesService) { }
 
   ngOnInit(): void {
-    
+    this.service.getCountry().subscribe((user: any) => {
+      console.log(user);
+      console.log("En observable");
+      this.userArray = user;
+    }, error => {
+      console.log("Error");
+    });
+    console.log("Salimos del observable");
   }
-
-  show(user) {
-    console.log(user)
+  
+  pushButton(user) {
+    this.user = user;
+    console.log(user);
   }
 
 }

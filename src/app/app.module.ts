@@ -9,6 +9,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ListadoEntidadComponent } from './components/listado-entidad/listado-entidad.component';
 import { ControlEntidadComponent } from './components/control-entidad/control-entidad.component';
+import { DetalleEntidadComponent } from './components/detalle-entidad/detalle-entidad.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ControlEntidadComponent } from './components/control-entidad/control-en
     LandingComponent,
     ErrorComponent,
     ListadoEntidadComponent,
-    ControlEntidadComponent
+    ControlEntidadComponent,
+    DetalleEntidadComponent
   ],
   imports: [
     BrowserModule,

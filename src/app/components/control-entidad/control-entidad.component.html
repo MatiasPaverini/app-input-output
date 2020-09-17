@@ -1,1 +1,5 @@
-<app-listado-entidad></app-listado-entidad>
+<app-listado-entidad [userArray]="userArray" (selectedUser)="pushButton($event)">
+</app-listado-entidad>
+<app-detalle-entidad [user] = "user">
+
+</app-detalle-entidad>
